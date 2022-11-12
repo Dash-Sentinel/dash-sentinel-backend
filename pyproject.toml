@@ -10,7 +10,12 @@ packages = [{include = "hackutd_ix"}]
 python = "^3.10"
 Flask = "^2.2.2"
 pillow = "^9.3.0"
+toml = "^0.10.2"
+sklearn = "^0.0.post1"
 
+
+[tool.poetry.group.dev.dependencies]
+yapf = "^0.32.0"
 
 [build-system]
 requires = ["poetry-core"]
