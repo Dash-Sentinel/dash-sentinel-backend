@@ -29,7 +29,7 @@ TEST_SIZE = 0.10
 SVC_ITER = 10000
 SVC_C = 0.0001
 CV_ITERS = 4
-READ_PICKLE = False
+READ_PICKLE = True
 
 FTR_HOG = True
 FTR_BIN_SPTL = True
@@ -229,17 +229,14 @@ def convert_to_std(img_paths, size):
         mpimg.imsave(loc, resized)
 
 
-
-vehicle_img_locs = glob.glob(VEHICLE_IMG_PATHS)
-non_vehicle_img_locs = glob.glob(NON_VEHICLE_IMG_PATHS)
-
-
-
-convert_to_std(vehicle_img_locs, (64, 64))
-convert_to_std(non_vehicle_img_locs, (64, 64))
-
 if not READ_PICKLE:
+    vehicle_img_locs = glob.glob(VEHICLE_IMG_PATHS)
+    non_vehicle_img_locs = glob.glob(NON_VEHICLE_IMG_PATHS)
+
+    convert_to_std(vehicle_img_locs, (64, 64))
+    convert_to_std(non_vehicle_img_locs, (64, 64))
     t=time.time()
+
     # Extract all vehicle features from vehicle images
     vehicle_features = extract_all_features(
         vehicle_img_locs, 
