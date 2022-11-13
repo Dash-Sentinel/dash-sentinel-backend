@@ -18,20 +18,18 @@ def get_image_color(filename):
         return Color.BLACK
     elif hls[2] <= 0.1: # A very low saturation (if not white or black) indicates gray
         return Color.GRAY
+    elif hue <= 30:
+        return Color.RED
+    elif hue <= 90:
+        return Color.YELLOW
+    elif hue <= 150:
+        return Color.GREEN
+    elif hue <= 210:
+        return Color.CYAN
+    elif hue <= 270:
+        return Color.BLUE
     else:
-        match hue:
-            case hue if hue <= 30:
-                return Color.RED
-            case hue if hue <= 90:
-                return Color.YELLOW
-            case hue if hue <= 150:
-                return Color.GREEN
-            case hue if hue <= 210:
-                return Color.CYAN
-            case hue if hue <= 270:
-                return Color.BLUE
-            case _:
-                return Color.RED
+        return Color.RED
 
 ## Tester code, remove later
 #import sys
