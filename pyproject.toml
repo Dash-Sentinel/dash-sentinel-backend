@@ -12,6 +12,7 @@ Flask = "^2.2.2"
 pillow = "^9.3.0"
 toml = "^0.10.2"
 sklearn = "^0.0.post1"
+haishoku = "^1.1.8"
 
 
 [tool.poetry.group.dev.dependencies]

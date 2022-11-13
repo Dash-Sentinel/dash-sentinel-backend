@@ -36,6 +36,17 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "haishoku"
+version = "1.1.8"
+description = "A development tool for grabbing the dominant color or representative color palette from an image."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pillow = "*"
+
+[[package]]
 name = "itsdangerous"
 version = "2.1.2"
 description = "Safely pass data to untrusted environments and back."
@@ -118,7 +129,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "ab5e6a1890ca1f30c32287236a5686cf187d87d67d6072e34a78081e474a2719"
+content-hash = "093ad15b14e0a254cbac5da12da1bfc44611308194fd1a76411efa3f9c684f9e"
 
 [metadata.files]
 click = [
@@ -132,6 +143,10 @@ colorama = [
 flask = [
     {file = "Flask-2.2.2-py3-none-any.whl", hash = "sha256:b9c46cc36662a7949f34b52d8ec7bb59c0d74ba08ba6cb9ce9adc1d8676d9526"},
     {file = "Flask-2.2.2.tar.gz", hash = "sha256:642c450d19c4ad482f96729bd2a8f6d32554aa1e231f4f6b4e7e5264b16cca2b"},
+]
+haishoku = [
+    {file = "haishoku-1.1.8-py3-none-any.whl", hash = "sha256:c505b8154aa41c98748059860033d47c1409330c5ac4fdbc90378223ebb996b4"},
+    {file = "haishoku-1.1.8.tar.gz", hash = "sha256:e4b9a14c03586081b18abcf04b4320168fea93ff611e81b2bccd5d5269ffcbd4"},
 ]
 itsdangerous = [
     {file = "itsdangerous-2.1.2-py3-none-any.whl", hash = "sha256:2c2349112351b88699d8d4b6b075022c0808887cb7ad10069318a8b0bc88db44"},
