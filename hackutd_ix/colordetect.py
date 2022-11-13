@@ -1,5 +1,6 @@
 import colorsys
 from haishoku.haishoku import Haishoku
+from common import Color
 
 def get_image_color(filename):
     #dominant = Haishoku.getDominant(filename)
@@ -12,26 +13,26 @@ def get_image_color(filename):
     hue = 360 * hls[0] # convert to degrees on a color wheel to make it easier to consult a chart
     # Determine color
     if hls[1] >= 0.8: # A very high lightness indicates white
-        return "white"
+        return Color.WHITE
     elif hls[1] <= 0.2: # A very low lightness indicates black
-        return "black"
+        return Color.BLACK
     elif hls[2] <= 0.1: # A very low saturation (if not white or black) indicates gray
-        return "gray"
+        return Color.GRAY
     else:
         match hue:
             case hue if hue <= 30:
-                return "red"
+                return Color.RED
             case hue if hue <= 90:
-                return "yellow"
+                return Color.YELLOW
             case hue if hue <= 150:
-                return "green"
+                return Color.GREEN
             case hue if hue <= 210:
-                return "cyan"
+                return Color.CYAN
             case hue if hue <= 270:
-                return "blue"
+                return Color.BLUE
             case _:
-                return "red"
+                return Color.RED
 
 ## Tester code, remove later
-import sys
-print(get_image_color(sys.argv[1]))
+#import sys
+#print(get_image_color(sys.argv[1]))
