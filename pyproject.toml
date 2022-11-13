@@ -10,6 +10,7 @@ packages = [{include = "hackutd_ix"}]
 python = "^3.10"
 Flask = "^2.2.2"
 pillow = "^9.3.0"
+haishoku = "^1.1.8"
 
 
 [build-system]
