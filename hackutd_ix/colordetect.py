@@ -4,7 +4,6 @@ from haishoku.haishoku import Haishoku
 def get_image_color(filename):
     #dominant = Haishoku.getDominant(filename)
     dominant = Haishoku.getPalette(filename)[2][1]
-    #aishoku.showPalette(filename)
     print(dominant)
     dominant = tuple(elem / 255 for elem in dominant)
     print(dominant)
@@ -32,6 +31,7 @@ def get_image_color(filename):
                 return "blue"
             case _:
                 return "red"
-    
+
+## Tester code, remove later
 import sys
 print(get_image_color(sys.argv[1]))
