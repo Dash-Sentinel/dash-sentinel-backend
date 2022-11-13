@@ -7,6 +7,7 @@ from collections import deque
 from common import Color
 from colordetect import get_image_color
 from statistics import mode
+from detect_vehicle import process_video
 #MAX_IMAGE_STORAGE = 10
 
 # Record 
@@ -37,12 +38,15 @@ while True:
     # Extract car colors from the video
     if not os.path.exists('image_captures'):
         os.makedirs('image_captures')
-    image_captures = process_video(filename, 'image_captures')
+    image_captures = process_video(video_filename, 'image_captures')
     image_colors = list(map(get_image_color,image_captures))
     car_color = mode(image_colors)
 
+    for i in len(image_captures):
+        print(image_captures[i], ": ", image_colors[i])
+
     # Clean up
-    os.remove(video_filename)
-    for image in image_captures:
-        os.remove(image)
-    sleep(15)
+    #os.remove(video_filename)
+    #for image in image_captures:
+    #    os.remove(image)
+    #sleep(15)
